@@ -22,11 +22,13 @@ int main(){
   
     while(1){
         int n;
+        char extra;
         char resposta;
         printf("=============================== \n  Calculadora Simples     \n=============================== \nSelecione uma operação:\n1. Adição\n2. Subtração\n3. Multiplicação\n4. Divisão\n5. Sair\nOpção:");
         
-
-        if (scanf("%d", &n) != 1) {
+        
+        
+        if (scanf("%d%c", &n, &extra) != 2 || extra != '\n') {
             printf("Erro: Essa não é uma opção.\n");
 
             while (getchar() != '\n') {
@@ -38,7 +40,8 @@ int main(){
         if (n < 1 || n > 5) {
             printf("Erro: Essa não é uma opção.\n");
             continue;
-        }       
+        }
+        
 
         if (n == 5) {
             printf("Obrigado por usar a calculadora! Até a próxima.\n");
